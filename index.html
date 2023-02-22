@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <title>User Data Form</title>
+</head>
+
+
+
+<body>
+
+    <!-- code for showing the Add User button -->
+
+    <button id="add-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><i
+            class="fa fa-book" data-dismiss="model"> </i>
+        Add User </button>
+
+
+    <!-- // code for showing the table header -->
+    <div class="d-flex bd-highlight table-box row mx-auto">
+        <table>
+            <tr>
+                <td>
+                    <div class="flex-fill h4">First Name</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Last Name</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Age</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Gender</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Email</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Country</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">State</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">City</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Qualification</div>
+                </td>
+                <td>
+                    <div class="flex-fill h4">Action</div>
+                </td>
+            </tr>
+            <tbody id="table-data">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- code for showing the model -->
+    <div class=" modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-dismiss="model"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop1Label" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg model-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdrop1Label">Add User</h5>
+                    <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="register-form">
+                        <div class="input-group">
+                            <span>First Name</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <input type="text" class="custom-control-input" id="firstname" required>
+                                <div class="invalid-feedback">Please Enter Your First Name</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>Last Name</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <input type="text" class="custom-control-input" id="lastname" required>
+                                <div class="invalid-feedback">Please Enter Your Last Name</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>Age</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <input type="text" maxlength="3" name='numonly' class="custom-control-input" id="age"
+                                    required>
+                                <div class="invalid-feedback">Please Enter Your Age</div>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>Email</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <input type="email" class="custom-control-input" id="email" required>
+                                <div class="invalid-feedback">Please Enter Your Email</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group" id="gender">
+                            <span>Gender</span>
+                            <div class=" col-md-9 ms-auto">
+                                <div class="form-check">
+                                    <div>
+                                        <input type="radio" name="gender" value="Male" id="male" required checked>
+                                        <label for="xs">Male</label>
+                                        <input type="radio" name="gender" value="Female" id="female" required>
+                                        <label for="s">Female</label>
+                                        <div class="invalid-feedback" id="male">Please Select Gender</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>Country</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <select class="custom-select" id="country" name="country" required>
+                                    <option value="" selected> ---select--- </option>
+                                    <option value="India">India</option>
+                                    <option value="US">US</option>
+                                </select>
+                                <div class="invalid-feedback">Please Select Country</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>State</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <select class="custom-select" id="state" name="state" required>
+                                    <option value="" selected> ---select--- </option>
+                                </select>
+                                <div class="invalid-feedback">Please Select State</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>City</span>
+                            <div class="was-validated col-md-8 ms-auto">
+                                <select class="custom-select" id="city" name="city" required>
+                                    <option value="" selected> ---select--- </option>
+                                </select>
+                                <div class="invalid-feedback">Please Select City</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <span>Qualification</span>
+                            <div class="form-check col-md-8 ms-auto">
+                                <input class="form-check-input qualification" type="checkbox" name="qualification"
+                                    id="computer" value="Computer">
+                                <label class="form-check-label" for="qualification">Computer</label>
+                            </div>
+                            <div class="form-check col-md-8 ms-auto">
+                                <input class="form-check-input qualification" type="checkbox" name="qualification"
+                                    id="it" value="IT">
+                                <label class="form-check-label" for="qualification">IT</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                            <button type="reset" class="btn btn-danger" id="close-btn-m">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- code for reloading the page when we click on close button on form -->
+    <script>
+        $(function () {
+            $("input[name='numonly']").on('input', function (e) {
+                $(this).val($(this).val().replace(/[^0-9]/g, '')); 
+            });
+        });
+        $(function () {
+            $("#email").on('input', function (e) {
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/;
+                if (!regex.test($('#email').val())) {
+                    $('#email').next().show();
+                } else {
+                    $('#email').next().hide();
+                }
+            });
+        });
+    </script>
+    <!-- <script src="validation.js"></script>     -->
+    <script src="StudentTask.js"></script>
+    <script src="StudentTask1.js"></script>
+    <link rel="stylesheet" href="StudentTask.css">
+</body>
+
+</html>

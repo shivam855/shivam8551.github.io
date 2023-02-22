@@ -1,0 +1,11 @@
+{
+  "name": "student",
+  "version": "1.0.0",
+  "description": "For Learning Purpose",
+  "main": "StudentTask.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SHivam",
+  "license": "ISC"
+}
